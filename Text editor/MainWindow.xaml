@@ -1,0 +1,92 @@
+﻿<Window x:Class="Text_editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Text_editor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.18*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" BorderBrush="Black">
+            <WrapPanel Grid.Row="0" Height="50" ItemHeight="28"  VerticalAlignment="Bottom">
+                <WrapPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFF4747" Offset="1"/>
+                    </LinearGradientBrush>
+                </WrapPanel.Background>
+                <TextBox
+                x:Name="JsonPath"
+                    Background="AntiqueWhite"
+                    SelectionBrush="Red"
+                Margin="3"
+                Width="150" PreviewMouseUp="Mouse_Down">C:Windows\Usrs\</TextBox>
+                <Button Width="40" Margin="3" FontWeight="Bold" Foreground="DarkRed" Click="Button_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7B6969" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background> Load
+                </Button>
+                <Button x:Name="Save_Button" FontWeight="Bold" Foreground="DarkRed" Width="40" Margin="3" Click="Save_Button_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7B6969" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background> Save
+                </Button>
+                <CheckBox x:Name="AutoSave" FontWeight="Bold" Foreground="White" Width="65" Height="22" VerticalContentAlignment="Bottom" FontSize="10" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7B6969" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </CheckBox.Background> AutoSave
+                </CheckBox>
+                <Button Name="CopyText" FontWeight="Bold" Foreground="DarkRed"  Width="40" Margin="3" Click="CopyText_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7B6969" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background> Copy
+                </Button>
+                <Button FontWeight="Bold" Foreground="DarkRed"  Width="40" Margin="3" Click="Button_Click_1">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7B6969" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background> Paste
+                </Button>
+                <Button FontWeight="Bold" Foreground="DarkRed"  Width="62" Margin="3" >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF7B6969" Offset="1"/>
+                            <GradientStop Color="White" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Background> Select All
+                </Button>
+            </WrapPanel>
+        </Border>
+        <WrapPanel Grid.Row="1" Orientation="Vertical" >
+            <Border BorderThickness="1" BorderBrush="Black">
+                <TextBox x:Name="MainTextBox" Foreground="AntiqueWhite" Width="799" Height="282"  FontWeight="Bold" AcceptsReturn="True" KeyDown="AutoCheck_Checked" KeyUp="AutoCheck_Checked" FontStyle="Italic" FontSize="25" Text="Hello world!" SelectionBrush="AntiqueWhite" >
+                    <TextBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="1"/>
+                            <GradientStop Color="#FFFB4C4C" Offset="0"/>
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                </TextBox>
+            </Border>
+        </WrapPanel>
+
+    </Grid>
+</Window>
